@@ -1,0 +1,8 @@
+venv/*
+.vscode/settings.json
+app/__pycache__/__init__.cpython-37.pyc
+app/__pycache__/config.cpython-37.pyc
+app/__pycache__/forms.cpython-37.pyc
+app/__pycache__/routes.cpython-37.pyc
+.flaskenv
+__pycache__/microblog.cpython-37.pyc
