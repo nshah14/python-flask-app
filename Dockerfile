@@ -1,11 +1,17 @@
-FROM ubuntu:18.04
+FROM alpine:3.11
 
-RUN apt-get update -y && \ 
-    apt-get -y install python3  python3-pip  python3-dev libmysqlclient-dev
+RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev  libc-dev && \
+    apk add --no-cache --update python3 && \
+    pip3 install --upgrade pip setuptools
+# RUN pip3 install pendulum service_identity
+RUN apk update \
+    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add --no-cache mariadb-dev
 
 COPY . /microblog 
 WORKDIR  /microblog
 
+RUN pip3 install  mysqlclient  
 RUN pip3 install -r requirements.txt
 
 

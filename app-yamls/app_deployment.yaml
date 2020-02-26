@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: python-app-service
+  labels:
+    application: flask
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        svc: python-app-service
+        application: flask
+    spec:
+      containers:
+      - name: python-app-service
+        image: shahnavedali/py-app-alpine:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: httpport
+        env:
+          - name: MYSQL_HOST
+            value: 
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: my-db-secret
+                key: username
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: my-db-secret
+                key: password
+        livenessProbe:
+          httpGet:
+            path: /index
+            port: 5000
+          initialDelaySeconds: 60
+          periodSeconds: 20
