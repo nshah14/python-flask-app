@@ -8,3 +8,16 @@ app/__pycache__/routes.cpython-37.pyc
 __pycache__/microblog.cpython-37.pyc
 ubuntu-xenial-16.04-cloudimg-console.log
 .vagrant/rgloader/loader.rb
+.vagrant/machines/default/virtualbox/action_provision
+.vagrant/machines/default/virtualbox/action_set_name
+.vagrant/machines/default/virtualbox/box_meta
+.vagrant/machines/default/virtualbox/creator_uid
+.vagrant/machines/default/virtualbox/id
+.vagrant/machines/default/virtualbox/index_uuid
+.vagrant/machines/default/virtualbox/private_key
+.vagrant/machines/default/virtualbox/synced_folders
+.vagrant/machines/default/virtualbox/vagrant_cwd
+app/__pycache__/__init__.cpython-36.pyc
+app/__pycache__/config.cpython-36.pyc
+app/__pycache__/forms.cpython-36.pyc
+app/__pycache__/routes.cpython-36.pyc

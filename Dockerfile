@@ -1,17 +1,16 @@
-From ubuntu:16.04
-MAINTAINER Your name "navedshah@sbcons.net"
+FROM ubuntu:18.04
+
 RUN apt-get update -y && \ 
-    apt-get -y install python3  python3-pip python3-venv python3-dev
+    apt-get -y install python3  python3-pip  python3-dev libmysqlclient-dev
+
+COPY . /microblog 
+WORKDIR  /microblog
+
+RUN pip3 install -r requirements.txt
 
 
-COPY ./requirements.txt /app/requirements.txt
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
-WORKDIR /app
-
-RUN pip install -r requirements.txt
-
-COPY . /app
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "app.py" ]
+EXPOSE 5000
+CMD flask run --host 0.0.0.0
