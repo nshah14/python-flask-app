@@ -6,3 +6,5 @@ app/__pycache__/forms.cpython-37.pyc
 app/__pycache__/routes.cpython-37.pyc
 .flaskenv
 __pycache__/microblog.cpython-37.pyc
+ubuntu-xenial-16.04-cloudimg-console.log
+.vagrant/rgloader/loader.rb
